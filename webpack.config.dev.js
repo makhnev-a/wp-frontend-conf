@@ -1,31 +1,16 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const {merge} = require('webpack-merge');
 
-module.exports = {
+const baseConfig = require('./webpack.config.base');
+
+module.exports = merge(baseConfig, {
   mode: 'development',
-  entry: './src/index.js',
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'public'),
     publicPath: '/'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-react',
-              ['@babel/env', { targets: { browsers: ['last 7 versions'] } }]
-            ]
-          }
-        }
-      }
-    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -39,6 +24,5 @@ module.exports = {
     port: 3001,
     open: true,
     historyApiFallback: true
-  },
-  devtool: 'inline-source-map'
-};
+  }
+});
