@@ -4,7 +4,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.js?$/,
+        test: /\.(js|jsx)?$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -21,6 +21,9 @@ module.exports = {
         use: ['style-loader', 'css-loader', 'sass-loader',],
       },
     ]
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.es6']
   },
   devtool: 'inline-source-map'
 };

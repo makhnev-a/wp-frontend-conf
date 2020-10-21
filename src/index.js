@@ -1,4 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {BrowserRouter} from "react-router-dom";
+import {App} from './App';
 
-ReactDOM.render(<div>Hello world!222</div>, document.querySelector('#root'));
+ReactDOM.render(
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>, document.getElementById('root')
+);
