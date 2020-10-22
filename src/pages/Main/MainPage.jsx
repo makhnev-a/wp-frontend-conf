@@ -25,7 +25,7 @@ export const MainPage = ({auth}) => {
   const handleDrawerOpen = () => setOpen(true);
   const handleDrawerClose = () => setOpen(false);
 
-  if (!auth) {
+  if (auth === false) {
     return <Redirect to='/sign_in'/>
   }
 
