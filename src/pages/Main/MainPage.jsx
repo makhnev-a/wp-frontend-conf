@@ -10,12 +10,12 @@ import {mainListItems} from "../../components/App/listItems";
 import {Redirect, Route, Switch} from "react-router-dom";
 import {useStyles} from "../../components/App/styles";
 import imgLogo from '../../assets/img/nbn_logo_lk2-1.png';
-// import {Main} from "../../components/Main/Main";
-// import {About} from "../../components/About/About";
-// import {SpotsPage} from "../SpotsPage/SpotsPage";
-// import {SpotsPageItem} from "../SpotsPage/SpotsPageItem/SpotsPageItem";
-// import {MonitoringPage} from "../MonitoringPage/MonitoringPage";
-// import { StatisticsPage2 } from "../StatisticsPage/Statistics2";
+import {Main} from '../../components/Main/Main';
+import {About} from '../../components/About/About';
+import {SpotsPage} from '../../components/SpotsPage/SpotsPage';
+import {SpotsItem} from '../../components/SpotsPage/SpotsPageItem/SpotsPageItem';
+import {MonitoringPage} from "../../components/MonitoringPage/MonitoringPage";
+import {StatisticsPage2} from "../../components/StatisticsPage/StatisticsPage";
 
 
 export const MainPage = ({auth}) => {
@@ -71,16 +71,16 @@ export const MainPage = ({auth}) => {
           <List>{mainListItems}</List>
           <Divider/>
         </Drawer>
-        {/*<Switch>*/}
-        {/*  <Route exact from='/' render={() => <Main/>}/>*/}
-        {/*  <Route exact from='/about' render={() => <About/>}/>*/}
-        {/*  <Route exact from='/monitoring' render={() => <MonitoringPage/>}/>*/}
-        {/*  <Route exact from='/statistics' render={() => <StatisticsPage2/>}/>*/}
-        {/*  <Route exact from='/spots' render={() => <SpotsPage/>}/>*/}
-        {/*  <Route exact from='/spots/:id/edit'*/}
-        {/*         render={(props) => <SpotsPageItem {...props}/>}*/}
-        {/*  />*/}
-        {/*</Switch>*/}
+        <Switch>
+          <Route exact from='/' render={() => <Main/>}/>
+          <Route exact from='/about' render={() => <About/>}/>
+          <Route exact from='/monitoring' render={() => <MonitoringPage/>}/>
+          <Route exact from='/statistics' render={() => <StatisticsPage2/>}/>
+          <Route exact from='/spots' render={() => <SpotsPage/>}/>
+          <Route exact from='/spots/:id/edit'
+                 render={(props) => <SpotsItem {...props}/>}
+          />
+        </Switch>
       </div>
     </>
   );

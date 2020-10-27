@@ -1,10 +1,18 @@
-import React from "react";
+import React, {useEffect} from "react";
 import {api} from "../../../../api/api";
 
 import {DoughnutChart} from "../DoughnutChart";
 import useFetch from "../../../../hooks/useFetch";
 
 export const AuthMethodDoughnut = () => {
+  useEffect(() => {
+    const dt = api.wifibox.getAuthActivity(19217252, '2019-08-20', '2020-08-27').then(res => res );
+    console.log('dt', dt);
+    debugger
+    console.log(123);
+
+
+  }, [])
   const nasid = 19217252;
   const dataStart = '2019-08-20';
   const dataEnd = '2020-08-27';

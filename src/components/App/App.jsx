@@ -5,7 +5,7 @@ import {MainPage} from "../../pages/Main/MainPage";
 import {SignInPage} from "../../pages/SignIn/SignInPage";
 
 export const App = () => {
-  const [auth] = useState(false);
+  const [auth] = useState(true);
 
   return (
     <Switch>
