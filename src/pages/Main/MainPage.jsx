@@ -1,13 +1,14 @@
 import React from "react";
 import {Badge, CssBaseline, Divider, Drawer, IconButton, List, Typography} from "@material-ui/core";
-import AppBar from "@material-ui/core/AppBar";
 import clsx from "clsx";
+import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import MenuIcon from "@material-ui/icons/Menu";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import {mainListItems} from "../../components/App/listItems";
 import {Redirect, Route, Switch} from "react-router-dom";
+
 import {useStyles} from "../../components/App/styles";
 import imgLogo from '../../assets/img/nbn_logo_lk2-1.png';
 import {Main} from '../../components/Main/Main';
@@ -15,7 +16,7 @@ import {About} from '../../components/About/About';
 import {SpotsPage} from '../../components/SpotsPage/SpotsPage';
 import {SpotsItem} from '../../components/SpotsPage/SpotsPageItem/SpotsPageItem';
 import {MonitoringPage} from "../../components/MonitoringPage/MonitoringPage";
-import {StatisticsPage2} from "../../components/StatisticsPage/StatisticsPage";
+import {StatisticsPage} from '../../components/StatisticsPage/StatisticsPage';
 
 
 export const MainPage = ({auth}) => {
@@ -75,7 +76,7 @@ export const MainPage = ({auth}) => {
           <Route exact from='/' render={() => <Main/>}/>
           <Route exact from='/about' render={() => <About/>}/>
           <Route exact from='/monitoring' render={() => <MonitoringPage/>}/>
-          <Route exact from='/statistics' render={() => <StatisticsPage2/>}/>
+          <Route exact from='/statistics' render={() => <StatisticsPage/>}/>
           <Route exact from='/spots' render={() => <SpotsPage/>}/>
           <Route exact from='/spots/:id/edit'
                  render={(props) => <SpotsItem {...props}/>}

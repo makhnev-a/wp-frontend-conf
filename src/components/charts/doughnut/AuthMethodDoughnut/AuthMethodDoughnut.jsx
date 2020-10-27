@@ -5,14 +5,6 @@ import {DoughnutChart} from "../DoughnutChart";
 import useFetch from "../../../../hooks/useFetch";
 
 export const AuthMethodDoughnut = () => {
-  useEffect(() => {
-    const dt = api.wifibox.getAuthActivity(19217252, '2019-08-20', '2020-08-27').then(res => res );
-    console.log('dt', dt);
-    debugger
-    console.log(123);
-
-
-  }, [])
   const nasid = 19217252;
   const dataStart = '2019-08-20';
   const dataEnd = '2020-08-27';
@@ -24,17 +16,10 @@ export const AuthMethodDoughnut = () => {
     (response) => {
       const data1 = response.data.data1.reduce((acc, cur) => acc + cur, 0);
       const data2 = response.data.data2.reduce((acc, cur) => acc + cur, 0);
+
       return [
-        {
-          label: 'Calls',
-          data: data1,
-          color: COLORS[0]
-        },
-        {
-          label: 'Sms',
-          data: data2,
-          color: COLORS[1]
-        }
+        {label: 'Calls', data: data1, color: COLORS[0]},
+        {label: 'Sms', data: data2, color: COLORS[1]}
       ];
     }
   );

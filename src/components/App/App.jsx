@@ -9,7 +9,7 @@ export const App = () => {
 
   return (
     <Switch>
-      <Route exact from='/' render={() => <MainPage auth={auth}/>}/>
+      <Route from='/' render={() => <MainPage auth={auth}/>}/>
       <Route from='/sign_in' render={() => <SignInPage auth={auth}/>}/>
     </Switch>
   );
